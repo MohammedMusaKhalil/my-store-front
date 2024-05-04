@@ -1,0 +1,12 @@
+button.delete-button {
+    background-color: #dc3545;  color: #fff;
+    border: none;  padding: 0.5rem 1rem;
+    cursor: pointer;}
+  button.delete-button:hover {
+    background-color: #c82333;}
+  button.add-button {  background-color: #28a745;
+    color: #fff;  border: none;
+    padding: 0.5rem 1rem;  cursor: pointer;
+  }
+  button.add-button:hover {  background-color: #218838;
+  }

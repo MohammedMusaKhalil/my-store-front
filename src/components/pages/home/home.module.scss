@@ -1,0 +1,31 @@
+.home {
+    .categories {
+        margin: 5px;
+        justify-content: center;
+        .item {
+            cursor: pointer;
+        }
+        .item.active {
+            background-color: black;
+            color: white;
+        }
+    }
+    .products {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        flex-wrap: wrap;
+        .product {
+            width: 18rem;
+            margin: 3px;
+            .image {
+                height: 200px;
+                object-fit: cover;
+            }
+        }
+    }
+}
+.buttonWithMargin {
+    margin: 4px;
+  }

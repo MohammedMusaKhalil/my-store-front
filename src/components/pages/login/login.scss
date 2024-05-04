@@ -1,0 +1,365 @@
+.login-page {
+    border: 1px solid rgba($color: #000000, $alpha: 0.8);
+    padding: 25px;
+    margin: 10px;
+    border-radius: 5px;
+}
+
+html {
+    scroll-behavior: smooth;
+  }
+  
+  :root {
+    --login_page_welcome_color: #9F5449;
+    --login_page_sign_in_color: white;
+    --input_fields_color: rgb(236, 234, 234);
+    --font_family: "Poppins", sans-serif;
+  }
+  
+  .main_container {
+    position: absolute;
+    height: 600px;
+    width: 1200px;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    flex-wrap: wrap;
+    box-shadow: 10px 10px 15px;
+  }
+  
+  .login_form {
+    position: relative;
+    width: 600px;
+    height: 600px;
+    background-color: var(--login_page_sign_in_color);
+  }
+  
+  .form > input::first-letter {
+    padding-left: 15px;
+  }
+  
+  .display_block {
+    display: block;
+  }
+  
+  .display_none {
+    display: none;
+  }
+  
+  #sign_in {
+    font-family: var(--font_family);
+    font-weight: 800;
+    font-size: 55px;
+    position: absolute;
+    left: 200px;
+    top: 10%;
+  }
+  
+  .icons {
+    display: flex;
+    position: absolute;
+    top: 35%;
+    left: 200px;
+  }
+  
+  .spacing:hover {
+    cursor: pointer;
+    animation-name: move_icons;
+    animation-duration: 1s;
+  }
+  
+  .icons:hover {
+    box-shadow: 5px;
+  }
+  
+  .spacing {
+    padding-right: 50px;
+  }
+  
+  #alternative {
+    font-family: var(--font_family);
+    font-weight: 100;
+    position: absolute;
+    font-size: 20px;
+    left: 200px;
+    top: 40%;
+  }
+  
+  .form {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 50%;
+    left: 100px;
+  }
+  
+  .form > input {
+    width: 400px;
+    height: 40px;
+  }
+  
+  .form > button {
+    width: 90px;
+    height: 35px;
+  }
+  
+  #check_login_email {
+    margin-bottom: 15px;
+  }
+  
+  input {
+    border: 2px solid var(--input_fields_color);
+    background-color: var(--input_fields_color);
+    box-shadow: 1px 1px 1px;
+  }
+  
+  input::placeholder {
+    font-size: 15px;
+    padding-left: 15px;
+  }
+  
+  #forget {
+    font-family: var(--font_family);
+    color: black;
+    text-decoration: none;
+    position: absolute;
+    top: 140px;
+    left: 109px;
+  }
+  
+  #signin_btn {
+    position: absolute;
+    height: 40px;
+    width: 180px;
+    top: 190px;
+    left: 110px;
+    font-family: var(--font_family);
+    border: 2px solid var(--login_page_welcome_color);
+    border-radius: 20px;
+    color: white;
+    background-color: var(--login_page_welcome_color);
+  }
+  
+  #question_emoji {
+    display: none;
+    position: absolute;
+    left: 75%;
+    top: 140px;
+  }
+  
+  #signin_btn:hover {
+    cursor: pointer;
+  }
+  
+  /* The animation for the form starts from here! */
+  
+  .move_left {
+    animation-name: moveLeft;
+    animation-duration: 2.5s;
+    animation-fill-mode: forwards;
+  }
+  
+  .moveRightOriginal {
+    animation-name: moveRightOriginal;
+    animation-duration: 2.5s;
+    animation-fill-mode: forwards;
+  }
+  
+  .moveLeftOriginal {
+    animation-name: moveLeftOriginal;
+    animation-duration: 2.5s;
+    animation-fill-mode: forwards;
+  }
+  
+  .move_right {
+    animation-name: moveRight;
+    animation-duration: 2.5s;
+    animation-fill-mode: forwards;
+  }
+  
+  @keyframes moveLeftOriginal {
+    0% {
+      transform: translateX(600px);
+    }
+  
+    100% {
+      transform: translateX(0px);
+    }
+  }
+  
+  @keyframes moveRightOriginal {
+    0% {
+      transform: translateX(-600px);
+    }
+  
+    100% {
+      transform: translateX(0px);
+    }
+  }
+  
+  @keyframes moveLeft {
+    0% {
+      transform: translateX(0px);
+    }
+  
+    100% {
+      transform: translateX(-600px);
+    }
+  }
+  
+  @keyframes moveRight {
+    0% {
+      transform: translateX(0px);
+    }
+  
+    100% {
+      transform: translateX(600px);
+    }
+  }
+  
+  /* Styling for the Login Message starts from here! */
+  
+  .login_message {
+    position: relative;
+    height: 600px;
+    width: 600px;
+    background-color: var(--login_page_welcome_color);
+    animation-duration: 2s;
+  }
+  
+  #welcome_title {
+    position: absolute;
+    top: 28%;
+    left: 30%;
+    font-family: var(--font_family);
+    font-size: 55px;
+    color: var(--login_page_sign_in_color);
+  }
+  
+  #welcome_text {
+    position: absolute;
+    font-size: 20px;
+    top: 50%;
+    left: 10%;
+    white-space: nowrap;
+    font-family: var(--font_family);
+    color: var(--login_page_sign_in_color);
+    padding-bottom: 20px;
+  }
+  
+  #text_split {
+    position: absolute;
+    font-size: 20px;
+    top: 50%;
+    left: 20%;
+    font-family: var(--font_family);
+    color: var(--login_page_sign_in_color);
+  }
+  
+  #signup_btn {
+    font-family: var(--font_family);
+    position: absolute;
+    height: 40px;
+    width: 180px;
+    top: 65%;
+    left: 35%;
+    border: 2px solid var(--login_page_sign_in_color);
+    border-radius: 20px;
+    color: white;
+    background-color: var(--login_page_welcome_color);
+  }
+  
+  /* Styling for the Sign In and the Welcome Page Starts from here! */
+  
+  /* Welcome Back Part starts here! */
+  .welcome_back {
+    display: none;
+    position: relative;
+    height: 600px;
+    width: 600px;
+    background-color: var(--login_page_welcome_color);
+  }
+  
+  #welcome_back_title {
+    position: absolute;
+    top: 28%;
+    left: 94px;
+    font-family: var(--font_family);
+    font-size: 55px;
+    color: var(--login_page_sign_in_color);
+  }
+  
+  #welcome_text_2 {
+    position: absolute;
+    font-size: 20px;
+    top: 50%;
+    left: 15%;
+    white-space: nowrap;
+    font-family: var(--font_family);
+    color: var(--login_page_sign_in_color);
+    padding-bottom: 20px;
+  }
+  
+  #text_split_2 {
+    position: absolute;
+    font-size: 20px;
+    top: 50%;
+    left: 20%;
+    font-family: var(--font_family);
+    color: var(--login_page_sign_in_color);
+  }
+  
+  /* Sign Up Part Starts Here! */
+  
+  .sign_up {
+    display: none;
+    position: relative;
+    height: 600px;
+    width: 600px;
+    background-color: var(--login_page_sign_in_color);
+  }
+  
+  #create_account {
+    position: absolute;
+    font-family: var(--font_family);
+    font-size: 50px;
+    left: 102px;
+    top: 10%;
+  }
+  
+  #alternative_2 {
+    position: absolute;
+    font-size: 20px;
+    font-family: var(--font_family);
+    left: 136px;
+    top: 38%;
+  }
+  
+  .icons_2 {
+    display: flex;
+    position: absolute;
+    top: 32%;
+    left: 200px;
+  }
+  
+  #check_login_name {
+    margin-bottom: 15px;
+  }
+  
+  #signup_btn_2 {
+    font-family: var(--font_family);
+    position: absolute;
+    height: 40px;
+    width: 180px;
+    top: 200px;
+    left: 35%;
+    border: 2px solid var(--login_page_sign_in_color);
+    border-radius: 20px;
+    color: white;
+    background-color: var(--login_page_welcome_color);
+  }
+  
+  #signup_btn_2:hover {
+    cursor: pointer;
+  }

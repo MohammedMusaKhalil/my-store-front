@@ -1,0 +1,52 @@
+.orders-container {
+    padding: 20px;
+  }
+  
+  .orders-list {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  .order-item {
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 10px;
+  }
+  
+  .order-header {
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+  
+  .order-details {
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .order-details-item {
+    flex: 1;
+  }
+  
+  .order-details-label {
+    font-weight: bold;
+  }
+  
+  .order-products {
+    margin-top: 10px;
+  }
+  
+  .product-item {
+    margin-bottom: 5px;
+  }
+  
+  .product-name {
+    font-weight: bold;
+  }
+  
+  .product-quantity {
+    margin-left: 10px;
+    color: #666;
+  }
+  
