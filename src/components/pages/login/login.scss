@@ -16,22 +16,18 @@ html {
     --font_family: "Poppins", sans-serif;
   }
   
-  .main_container {
-    position: absolute;
-    height: 600px;
-    width: 1200px;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
-    display: flex;
-    flex-wrap: wrap;
-    box-shadow: 10px 10px 15px;
-  }
+.main_container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center; 
+
+    }
+  
   
   .login_form {
-    position: relative;
     width: 600px;
     height: 600px;
+    
     background-color: var(--login_page_sign_in_color);
   }
   

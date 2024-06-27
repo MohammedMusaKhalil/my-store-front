@@ -5,8 +5,7 @@ import { Link } from 'react-router-dom';
 import { useCookies } from 'react-cookie';
 import Api from '../../tools/api';
 import Loading from '../shared/Loading';
-import styles from './layout.module.scss';
-import Dashboard from '../pages/admin/dashboard';
+
 
 function AppBar() {
     const [cookie, setCookie] = useCookies(['token']);

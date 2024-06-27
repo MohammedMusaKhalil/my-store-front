@@ -1,7 +1,6 @@
 import { Outlet } from "react-router-dom";
-import AppBar from "./AppBar";
 import Footer from "./Footer";
-import styles from './layout.module.scss'
+import './layout.scss';  
 import { createContext, useContext, useState } from 'react';
 import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
@@ -36,27 +35,29 @@ export default function Layout() {
         authContext.setAuthState(false)
         setAppState({ ...appState, token: null, user: null })
     }
-    return <AppContext.Provider value={{
-        appState, setAppState, closePopup, showPopup, setSearch, setCategory,
-        // setToken, setUser
-        login, logout
-    }}>
-        <div >
-            <div className={styles.page}>
-                <Outlet />
+    return (
+        <AppContext.Provider value={{
+            appState, setAppState, closePopup, showPopup, setSearch, setCategory,
+            // setToken, setUser
+            login, logout
+        }}>
+            <div className="page">
+                <div style={{ flex: 1 }}>
+                    <Outlet />
+                </div>
+                <Footer />
+                <Modal show={appState.popup.show} onHide={closePopup}>
+                    <Modal.Header closeButton>
+                        <Modal.Title>Alert</Modal.Title>
+                    </Modal.Header>
+                    <Modal.Body>{appState.popup.message}</Modal.Body>
+                    <Modal.Footer>
+                        <Button variant="secondary" onClick={closePopup}>
+                            Close
+                        </Button>
+                    </Modal.Footer>
+                </Modal>
             </div>
-            <Footer />
-            <Modal show={appState.popup.show} onHide={closePopup}>
-                <Modal.Header closeButton>
-                    <Modal.Title>Alert</Modal.Title>
-                </Modal.Header>
-                <Modal.Body>{appState.popup.message}</Modal.Body>
-                <Modal.Footer>
-                    <Button variant="secondary" onClick={closePopup}>
-                        Close
-                    </Button>
-                </Modal.Footer>
-            </Modal>
-        </div>
-    </AppContext.Provider>
+        </AppContext.Provider>
+    );
 }

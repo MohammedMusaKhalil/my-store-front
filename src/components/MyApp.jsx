@@ -12,7 +12,7 @@ import ShowUsers from "./pages/admin/users/ShowUsers";
 import ShowProduts from "./pages/admin/product/ShowProduct";
 import AdminCategoriesPage from "./pages/admin/catigory/AdminCategoriesPage";
 import StoreDetals from "./pages/admin/details/StoreDetails";
-import Dashboard from "./pages/admin/dashboard"
+import Dashboard from "./pages/admin/details/AdminDetails"
 
 
 export const AuthContext = createContext(false)

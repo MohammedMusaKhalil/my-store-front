@@ -55,13 +55,15 @@ export default function Dashboard() {
                 <ul>
                     <li><Link to="/admin/user"><i className="fas fa-home" ></i>Profile</Link></li>
                     <li><Link to="/admin/detalis"><i className="fas fa-address-book"></i>Store Details</Link></li>
-                    <li><Link to="/admin/users"><i className="fas fa-user"></i>All Users</Link></li>
-                    <li><Link to="/admin/catgiores"><i className="fas fa-blog"></i>All Caigore</Link></li>
-                    <li><Link to="/admin/products"><i className="fas fa-address-card"></i>All Product</Link></li>
-                    <li><Link to="/admin/orders"><i className="fas fa-address-card"></i>All Orders</Link></li>
+                    <li><Link to="/admin/users"><i className="fas fa-user"></i>Users Edit</Link></li>
+                    <li><Link to="/admin/catgiores"><i className="fas fa-blog"></i> Catigory Edit</Link></li>
+                    <li><Link to="/admin/products"><i className="fas fa-address-card"></i>Products Edit</Link></li>
+                    <li><Link to="/admin/orders"><i className="fas fa-address-card"></i> Orders Edit</Link></li>
+                    <li><Link to="/"><i className="fas fa-address-card"></i>Go Back</Link></li>
                     <li><Link onClick={onLogout}><i className="fas fa-address-book"></i>Logout</Link></li>
                 </ul> 
             </div>
         </div>
+       
     );
 }
