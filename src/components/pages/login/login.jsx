@@ -169,11 +169,7 @@ export default function LoginPage() {
                 <div className="login_form" id="move_form_right">
                     <div className="display_block" id="test1">
                         <h1 id="sign_in">Sign in</h1>
-                        <div className="icons">
-                            <div className="facebook"><i className="fa-brands fa-facebook fa-2xl spacing icon_behaviour"></i></div>
-                            <div className="google"><i className="fa-brands fa-google fa-2xl spacing icon_behaviour"></i></div>
-                            <div className="linkden"><i className="fa-brands fa-linkedin-in fa-2xl spacing icon_behaviour"></i></div>
-                        </div>
+                       
                         <h2 id="alternative">or use your account</h2>
                         <form action="" className="form">
                             <input id="check_login_email" type="email" placeholder="Email" name="email" onChange={handleInputChange} />

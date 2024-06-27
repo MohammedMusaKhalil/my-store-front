@@ -47,28 +47,11 @@ html {
     font-family: var(--font_family);
     font-weight: 800;
     font-size: 55px;
-    position: absolute;
+  margin: 100px 150px;
     left: 200px;
     top: 10%;
   }
-  
-  .icons {
-    display: flex;
-    position: absolute;
-    top: 35%;
-    left: 200px;
-  }
-  
-  .spacing:hover {
-    cursor: pointer;
-    animation-name: move_icons;
-    animation-duration: 1s;
-  }
-  
-  .icons:hover {
-    box-shadow: 5px;
-  }
-  
+
   .spacing {
     padding-right: 50px;
   }
@@ -76,8 +59,9 @@ html {
   #alternative {
     font-family: var(--font_family);
     font-weight: 100;
-    position: absolute;
     font-size: 20px;
+    margin: 0px 150px;
+    margin-bottom: 20px;
     left: 200px;
     top: 40%;
   }
@@ -85,7 +69,6 @@ html {
   .form {
     display: flex;
     flex-direction: column;
-    position: absolute;
     top: 50%;
     left: 100px;
   }
@@ -101,6 +84,11 @@ html {
   }
   
   #check_login_email {
+    margin-left: 100px;
+    margin-bottom: 15px;
+  }
+  #check_login_password {
+    margin-left: 100px;
     margin-bottom: 15px;
   }
   
@@ -119,13 +107,12 @@ html {
     font-family: var(--font_family);
     color: black;
     text-decoration: none;
-    position: absolute;
     top: 140px;
     left: 109px;
   }
   
   #signin_btn {
-    position: absolute;
+    margin:100px 200px;
     height: 40px;
     width: 180px;
     top: 190px;
@@ -139,7 +126,7 @@ html {
   
   #question_emoji {
     display: none;
-    position: absolute;
+   
     left: 75%;
     top: 140px;
   }
@@ -325,7 +312,8 @@ html {
   }
   
   #alternative_2 {
-    position: absolute;
+    margin-left: 150px;
+    margin-top: 200px;
     font-size: 20px;
     font-family: var(--font_family);
     left: 136px;
@@ -340,12 +328,18 @@ html {
   }
   
   #check_login_name {
+    margin-left: 100px;
+    margin-bottom: 15px;
+  }
+  #check_login_password_confirmation{
+    margin-left: 100px;
     margin-bottom: 15px;
   }
   
   #signup_btn_2 {
     font-family: var(--font_family);
-    position: absolute;
+    margin-left: 200px;
+    margin-top: 50px;
     height: 40px;
     width: 180px;
     top: 200px;
