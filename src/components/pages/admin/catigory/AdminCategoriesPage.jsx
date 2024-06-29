@@ -6,6 +6,7 @@ import Button from "react-bootstrap/Button";
 import AddCategory from './AddCategory';
 import EditCategory from './EditCategory'; // استيراد المكون الجديد
 import Dashboard from "../dashboard";
+import Loading from '../../../shared/Loading';
 
 export default function AdminCatigori() {
   const [state, setState] = useState({
@@ -15,6 +16,7 @@ export default function AdminCatigori() {
   const [showAddCatForm, setShowAddCatForm] = useState(false); // حالة النافذة المنبثقة
   const [showEditCatForm, setShowEditCatForm] = useState(false); // حالة النافذة المنبثقة لتعديل الفئة
   const [selectedCategory, setSelectedCategory] = useState(null); // الفئة المحددة للتعديل
+  const [loading, setLoading] = useState(false);
 
   const handleCloseAddCatForm = () => {
     setShowAddCatForm(false);
@@ -46,7 +48,9 @@ export default function AdminCatigori() {
 
   const fetchCategories = async () => {
     try {
+      setLoading(true);
       const response = await Api.fetch({ url: 'categories' });
+      setLoading(false);
       setCategories(response.data);
    } catch (error) {
       console.error('Error fetching categories:', error);
@@ -73,7 +77,13 @@ export default function AdminCatigori() {
       <div  style={{width:'100%',height:'50px',textAlign:'center',marginTop:"10px"}}>
         <span className="subtitle">All catigory in Website</span>
       </div>
-      <Button onClick={handleShowAddCatForm} style={{marginLeft:"45%",backgroundColor:"#9F5449",marginBottom:"10px",border:'none'}} >Add Cat</Button> 
+      <Button onClick={handleShowAddCatForm} style={{marginLeft:"90%",backgroundColor:"#9F5449",marginBottom:"10px",border:'none'}} >Add Cat</Button> 
+      <br />
+          {loading ? (
+            
+            <Loading /> // عرض عنصر التحميل إذا كانت حالة التحميل صحيحة
+          ) : (
+      <div className="table-responsive" style={{ margin: '20px' }}>
       <Table >
         <thead>
           <tr>
@@ -97,6 +107,7 @@ export default function AdminCatigori() {
           ))}
         </tbody>
       </Table>
+      </div>)}
       <AddCategory show={showAddCatForm}  handleClose={handleCloseAddCatForm} fetchCatigore={fetchCategories} />
       <EditCategory show={showEditCatForm} handleClose={handleCloseEditCatForm} category={selectedCategory} fetchCategories={fetchCategories} /> {/* إضافة نموذج تعديل الفئة */}
     </div>

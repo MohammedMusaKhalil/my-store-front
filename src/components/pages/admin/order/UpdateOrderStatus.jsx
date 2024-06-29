@@ -63,8 +63,10 @@ function UpdateOrderStatus({ order, onUpdate, setSelectedOrder }) {
                                 onChange={(e) => handleQtyChange(product.id, e.target.value)}
                                 required
                             />
+                             
                         </Form.Group>
                     ))}
+                    <Form.Label style={{color:"red"}}>to delete any product press -1</Form.Label> <br />
                     <Button variant="primary" type="submit" disabled={loading}>
                         {loading ? 'Updating...' : 'Update Order'}
                     </Button>

@@ -6,6 +6,7 @@ import styles from './ShowProducts.module.scss';
 import AddProduct from "./AddProduct";
 import UpdateProduct from "./UpdateProduct"; // Import the new component
 import Dashboard from "../dashboard";
+import Loading from '../../../shared/Loading';
 
 function ShowProducts() {
     const appContext = useContext(AppContext);
@@ -14,6 +15,7 @@ function ShowProducts() {
     const [products, setProducts] = useState([]);
     const [showAddProduct, setShowAddProduct] = useState(false);
     const [showUpdateModal, setShowUpdateModal] = useState(false);
+    const [loading, setLoading] = useState(false);
     const [updateProductData, setUpdateProductData] = useState({
         id: "",
         name: "",
@@ -35,6 +37,7 @@ function ShowProducts() {
 
     const getProducts = async () => {
         try {
+            setLoading(true);
             let params = {};
             if (appContext.appState.search) {
                 params = { name: appContext.appState.search };
@@ -47,6 +50,7 @@ function ShowProducts() {
                 params: params
             });
             if (response != null && response.data != null) {
+                setLoading(false);
                 setProducts(response.data);
             }
         } catch (error) {
@@ -113,8 +117,13 @@ function ShowProducts() {
             <div style={{width:'100%',height:'50px',textAlign:'center',marginTop:"10px"}}>
                  <span className="subtitle">All Product in Website</span>
             </div>
-            <Button   onClick={handleShowAddProduct} style={{marginLeft:"45%",backgroundColor:"#9F5449",marginBottom:"10px",border:'none'}}>Add New Product</Button>
-            <div className="row">
+            <Button   onClick={handleShowAddProduct} style={{marginLeft:"86%",backgroundColor:"#9F5449",marginBottom:"10px",border:'none'}}>Add New Product</Button>
+            <br />
+          {loading ? (
+            
+            <Loading /> // عرض عنصر التحميل إذا كانت حالة التحميل صحيحة
+          ) : (
+            <div className="row" >
                 {products.map((product, index) => (
                     <div key={product.id} className="col-md-4 mb-4">
                         <Card>
@@ -134,7 +143,7 @@ function ShowProducts() {
                     </div>
                 ))}
                 <AddProduct show={showAddProduct} handleClose={handleCloseAddProduct} fetchProducts={getProducts} />
-            </div>
+            </div>)}
 
             <UpdateProduct // Pass necessary props to UpdateProduct component
                 show={showUpdateModal}

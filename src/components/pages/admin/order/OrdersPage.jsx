@@ -6,7 +6,7 @@ import Button from "react-bootstrap/Button";
 import { AppContext } from "../../../layout/Layout"
 import UpdateOrderStatus from './UpdateOrderStatus'
 import Dashboard from '../dashboard';
-
+import Loading from '../../../shared/Loading';
 
 function OrdersPage() {
     const [orders, setOrders] = useState([]);
@@ -15,10 +15,12 @@ function OrdersPage() {
     const [error, setError] = useState(null);
     const [selectedOrder, setSelectedOrder] = useState(null);
     const appContext = useContext(AppContext);
+    const [loading, setLoading] = useState(false);
 
     useEffect(() => {
         const fetchData = async () => {
             try {
+                setLoading(true);
                 const ordersResponse = await Api.fetch({
                     url: 'orders' + (appContext.appState?.user?.role ? `${appContext.appState.user.role}` : ''),
                     method: 'GET',
@@ -38,6 +40,7 @@ function OrdersPage() {
                     method: 'GET',
                     token: localStorage.getItem('token')
                 });
+                setLoading(false);
                 setProducts(productsResponse.data);
 
                 
@@ -91,7 +94,14 @@ function OrdersPage() {
         <div style={{width:'100%',height:'50px',textAlign:'center',marginTop:"10px"}}>
         <span className="subtitle">All Orders in Website</span>
       </div>
+      <br />
+          {loading ? (
+            
+            <Loading /> // عرض عنصر التحميل إذا كانت حالة التحميل صحيحة
+          ) : (
+      <div>
             {orders && orders.length > 0 ? (
+                <div className="table-responsive" style={{ margin: '20px' }}>
                 <Table>
                     <thead>
                         <tr>
@@ -125,9 +135,12 @@ function OrdersPage() {
                         ))}
                     </tbody>
                 </Table>
+                </div>
             ) : (
                 <p>No orders found.</p>
             )}
+            </div>
+          )}
             {selectedOrder && (
                 <UpdateOrderStatus order={selectedOrder} productsInStore={products} onUpdate={handleUpdateOrder} setSelectedOrder={setSelectedOrder}  />
             )}

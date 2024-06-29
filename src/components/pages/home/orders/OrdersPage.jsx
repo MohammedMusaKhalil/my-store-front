@@ -86,9 +86,9 @@ function OrdersPage() {
         <div>
             <AppBar/>
         <div>
-            <h2 style={{textAlign:'center'}}>My Orders</h2>
-            <br />
+            <h2 style={{textAlign:'center',marginTop:"5px"}}>My Orders</h2>
             {orders && orders.length > 0 ? (
+                <div className="table-responsive" style={{ margin: '20px' }}>
                 <Table>
                     <thead>
                         <tr>
@@ -125,6 +125,7 @@ function OrdersPage() {
                         ))}
                     </tbody>
                 </Table>
+                </div>
             ) : (
                 <p>No orders found.</p>
             )}
