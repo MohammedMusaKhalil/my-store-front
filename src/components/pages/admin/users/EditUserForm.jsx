@@ -66,6 +66,17 @@ function EditUserForm({ show, handleClose, user: initialUser, fetchUsers }) {
               required
             />
           </Form.Group>
+          <Form.Group controlId="formBasicName" style={{marginTop:"10px"}}>
+            <Form.Label>Adress</Form.Label>
+            <Form.Control
+              type="text"
+              placeholder="Enter address"
+              name="address"
+              value={user ? user.address : ''}
+              onChange={handleChange}
+              required
+            />
+          </Form.Group>
 
           <Form.Group controlId="formBasicRole">
             <Form.Label style={{margin:"10px"}}>Role</Form.Label>

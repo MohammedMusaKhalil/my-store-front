@@ -97,7 +97,7 @@ function OrdersPage() {
       <br />
           {loading ? (
             
-            <Loading /> // عرض عنصر التحميل إذا كانت حالة التحميل صحيحة
+            <Loading /> 
           ) : (
       <div>
             {orders && orders.length > 0 ? (
@@ -108,6 +108,7 @@ function OrdersPage() {
                             <th>Order ID</th>
                             <th>Order Date</th>
                             <th>User</th>
+                            <th>the address</th>
                             <th>Total</th>
                             <th>Product Names</th>
                             <th>Actions</th>
@@ -118,6 +119,7 @@ function OrdersPage() {
                             <tr key={order.id}>
                                 <td>{order.id}</td>
                                 <td>{order.date}</td>
+                                <td>{users.find(user => user.id === order.user_id)?.name}</td>
                                 <td>{users.find(user => user.id === order.user_id)?.name}</td>
                                 <td>{order.total}</td>
                                 <td>

@@ -43,19 +43,6 @@ function AddUserForm({ show, handleClose, fetchUsers }) {
         <Modal.Title>Add User</Modal.Title>
       </Modal.Header>
       <Modal.Body>
-        <Form onSubmit={handleSubmit}>
-          <Form.Group controlId="formBasicEmail">
-            <Form.Label>Email address</Form.Label>
-            <Form.Control
-              type="email"
-              placeholder="Enter email"
-              name="email"
-              value={formData.email}
-              onChange={handleChange}
-              required
-            />
-          </Form.Group>
-
           <Form.Group controlId="formBasicName">
             <Form.Label>Name</Form.Label>
             <Form.Control
@@ -67,8 +54,31 @@ function AddUserForm({ show, handleClose, fetchUsers }) {
               required
             />
           </Form.Group>
+          <Form.Group controlId="formBasicName" style={{marginTop:"10px"}}>
+            <Form.Label>address</Form.Label>
+            <Form.Control
+              type="text"
+              placeholder="Enter address"
+              name="address"
+              value={formData.address}
+              onChange={handleChange}
+              required
+            />
+          </Form.Group>
+          <Form onSubmit={handleSubmit}  style={{marginTop:"10px"}}>
+          <Form.Group controlId="formBasicEmail">
+            <Form.Label>Email address</Form.Label >
+            <Form.Control
+              type="email"
+              placeholder="Enter email"
+              name="email"
+              value={formData.email}
+              onChange={handleChange}
+              required
+            />
+          </Form.Group>
 
-          <Form.Group controlId="formBasicPassword">
+          <Form.Group controlId="formBasicPassword" style={{marginTop:"10px"}}>
             <Form.Label>Password</Form.Label>
             <Form.Control
               type="password"
@@ -79,7 +89,7 @@ function AddUserForm({ show, handleClose, fetchUsers }) {
               required
             />
           </Form.Group>
-          <Form.Group controlId="formBasicPassword">
+          <Form.Group controlId="formBasicPassword" style={{marginTop:"10px"}}>
             <Form.Label>ADD Role</Form.Label>
             <Form.Control
               type="role"
@@ -91,7 +101,7 @@ function AddUserForm({ show, handleClose, fetchUsers }) {
             />
           </Form.Group>
 
-          <Button variant="primary" type="submit">
+          <Button variant="primary" type="submit" style={{marginTop:"10px"}}>
             Submit
           </Button>
         </Form>

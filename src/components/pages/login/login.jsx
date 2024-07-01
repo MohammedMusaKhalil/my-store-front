@@ -126,6 +126,7 @@ export default function LoginPage() {
         if (
             (state2.name == null || state2.name.length == 0) ||
             (state2.email == null || state2.email.length == 0) ||
+            // (state2.address == null || state2.address.length == 0) ||
             (state2.password == null || state2.password.length == 0) ||
             (state2.password_confirmation == null || state2.password_confirmation.length == 0)
         ) {
@@ -194,6 +195,9 @@ export default function LoginPage() {
                             }}/>
                             <input id="check_login_email" type="email" placeholder="Email"  onChange={(e) => {
                                 setstate2({ ...state2, email: e.target.value })
+                            }}/>
+                            <input id="check_login_email" type="address" placeholder="address"  onChange={(e) => {
+                                setstate2({ ...state2, address: e.target.value })
                             }}/>
                             <input id="check_login_password" type="password" placeholder="Password"  onChange={(e) => {
                                 setstate2({ ...state2, password: e.target.value })

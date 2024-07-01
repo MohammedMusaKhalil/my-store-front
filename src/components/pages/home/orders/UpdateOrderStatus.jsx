@@ -65,7 +65,7 @@ function UpdateOrderStatus({ order, onUpdate, setSelectedOrder }) {
                             />
                         </Form.Group>
                     ))}
-                    <Button variant="primary" type="submit" disabled={loading}>
+                    <Button variant="primary" type="submit" disabled={loading} style={{marginTop:"10px"}}>
                         {loading ? 'Updating...' : 'Update Order'}
                     </Button>
                     {error && <p className="text-danger">{error.message}</p>}

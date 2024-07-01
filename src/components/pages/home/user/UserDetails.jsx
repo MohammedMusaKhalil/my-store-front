@@ -19,6 +19,7 @@ export default function UserDetailsPage() {
                         <p><b>name: </b> {appContext.appState?.user?.name} </p>
                         <p><b>email: </b> {appContext.appState?.user?.email} </p>
                         <p><b>role: </b> {appContext.appState?.user?.role} </p>
+                        <p><b>the address: </b> {appContext.appState?.user?.address}</p>
                     </div>
                 </div>
           </div>
