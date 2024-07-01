@@ -120,7 +120,7 @@ function OrdersPage() {
                                 <td>{order.id}</td>
                                 <td>{order.date}</td>
                                 <td>{users.find(user => user.id === order.user_id)?.name}</td>
-                                <td>{users.find(user => user.id === order.user_id)?.name}</td>
+                                <td>{users.find(user => user.id === order.user_id)?.address}</td>
                                 <td>{order.total}</td>
                                 <td>
                                     <ul>
